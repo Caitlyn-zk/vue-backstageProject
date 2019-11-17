@@ -1,0 +1,24 @@
+body {
+	background: url(../assets/login_1.png) no-repeat center center;
+}
+.login-box {
+	background: black;
+	opacity: .5;
+	height: 800px;
+	position: relative;
+}
+.login-box-bar {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -200px;
+	height: 500px;
+	width: 400px;
+}
+.box-title-img {
+	background: url(../assets/logo_2.png) no-repeat center;
+	height: 52px;
+	background-color: transparent;
+	
+}
