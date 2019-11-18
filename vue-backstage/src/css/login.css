@@ -1,24 +1,76 @@
-body {
-	background: url(../assets/login_1.png) no-repeat center center;
-}
 .login-box {
-	background: black;
-	opacity: .5;
-	height: 800px;
+	background: url(../assets/login_1.png) no-repeat center;
+}
+.login-box-main {
+	opacity: .8;
+	background: #011932;
+	height: 860px;
 	position: relative;
 }
 .login-box-bar {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: -250px;
+	margin-top: -200px;
 	margin-left: -200px;
-	height: 500px;
+	height: 400px;
 	width: 400px;
 }
 .box-title-img {
 	background: url(../assets/logo_2.png) no-repeat center;
 	height: 52px;
+	margin-bottom: 15px;
 	background-color: transparent;
-	
+}
+.login-list-bar {
+	padding: 5px 40px;
+}
+
+.el-form-email {
+	margin: 25px 40px;
+	border-bottom: 1px solid #fff;	
+}
+.el-form-email .el-input input {
+	outline: none;
+	background: transparent;
+	border: 0;
+	color: #fff;
+}
+.login-submit-btn {
+	margin-left: 10px;
+}
+.login-submit-btn button{
+	width: 230px;
+	font-size: 18px;
+	margin-left: -54px;
+}
+.login-list-pas {
+	font-size: 14px;
+	color: #fff;
+	margin: 20px 0;
+}
+.login-fond {
+	color: #409Eff;
+	cursor: pointer;
+	margin-left: 70px;
+}
+.el-form-item__label {
+	color: #fff;
+}
+/* 找回密码 */
+.el-form-email .el-button {
+	background: transparent;
+	padding: 5px 10px;
+}
+.fond-title {
+	font-size: 18px;
+	color: #fff;
+}
+.fond-title span {
+	display: inline-block;
+	border-bottom: 1px solid #fff;
+}
+.fond-button button{
+	width: 220px;
+	margin-left: -84px;
 }

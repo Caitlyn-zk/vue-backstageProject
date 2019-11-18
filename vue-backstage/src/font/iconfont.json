@@ -1,0 +1,93 @@
+{
+  "id": "1515259",
+  "name": "vue后台项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2035238",
+      "name": "企业信息",
+      "font_class": "qiyexinxi",
+      "unicode": "e98b",
+      "unicode_decimal": 59787
+    },
+    {
+      "icon_id": "3413218",
+      "name": "签到二维码管理",
+      "font_class": "qiandaoerweimaguanli",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "3831262",
+      "name": "商家管理",
+      "font_class": "shangjiaguanli",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "5664708",
+      "name": "退出",
+      "font_class": "tuichu",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "5884767",
+      "name": "问题",
+      "font_class": "wenti",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
+      "icon_id": "6025194",
+      "name": "企业信息管理",
+      "font_class": "qiyexinxiguanli",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "6431165",
+      "name": "企业账户",
+      "font_class": "qiyezhanghu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "7217282",
+      "name": "产品管理",
+      "font_class": "chanpinguanli",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "8035438",
+      "name": "家",
+      "font_class": "jia",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "8839187",
+      "name": "核销二维码信息2",
+      "font_class": "hexiaoerweimaxinxi",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "9658953",
+      "name": "垃圾",
+      "font_class": "laji",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "10496291",
+      "name": "个人中心 我的  人物 标准头 线性",
+      "font_class": "gerenzhongxinwoderenwubiaozhuntouxianxing",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    }
+  ]
+}
