@@ -1,29 +1,30 @@
 <template>
-	<div class="login-box">
+	<div class="login-box login">
 			<div class="login-box-main">
-				<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="52px" class="login-box-bar demo-ruleForm">
-					<div class="box-title-img"></div>
-					
+				<el-form :model="loginForm" status-icon :rules="rules2" ref="loginForm" class="login-box-bar demo-ruleForm">
+					<div class="box-title-img">
+						<img src="../../assets/logo_2.png"/>
+					</div>
 					<el-form-item
-						class="el-form-email"
+						class="login-form-email"
 						prop="email"
-						label="邮箱"
-						:rules="[
-							{ required: true, message: '请输入邮箱地址', trigger: 'blur' },
-							{ type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur,change' }
-						]"
+						label=""
 					>
-						<el-input v-model="ruleForm2.email"></el-input>
+						<i class="login-icony el-icon-mobile-phone"></i>
+						<input placeholder="邮箱" class="login-input" v-model="loginForm.email"/>
 					</el-form-item>
-					<el-form-item class="el-form-email" label="密码" prop="pass">
-						<el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+					<el-form-item class="login-form-email" label="" prop="pass">
+						<i class="login-icony el-icon-lock"></i>
+						<input class="login-input" placeholder="密码" type="password" v-model="loginForm.pass" auto-complete="off"/>
 					</el-form-item>
-					<div class="login-list-pas">
-						<el-checkbox align='left' v-model="checked1">是否记住账号</el-checkbox>
+				<div class="login-list-pas">
+					<label>
+						<input class="login-checked" align='left' type="checkbox" v-model="checked1"/><span>是否记住账号</span>
+					</label>
 						<router-link class="login-fond" to="/retrievepas">忘记密码?立即找回</router-link>
 					</div>
 					<el-form-item class="login-submit-btn">
-						<el-button type="primary" @click="submitForm('ruleForm2')">立即登录</el-button>
+						<el-button type="primary" @click="loginsubmit('loginForm')">立即登录</el-button>
 					</el-form-item>
 					<div style="color:#fff;">百溯真商家后台</div>
 				</el-form>
@@ -34,35 +35,35 @@
 <script>
 export default {
 	data() {
-      var validatePass = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请输入密码'))
-        } else {
-          if (this.ruleForm2.checkPass !== '') {
-            this.$refs.ruleForm2.validateField('checkPass')
-          }
-          callback()
-        }
+		var validatetell = (rule, value, callback) => {
+				let reg = /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/
+				if (!value) {
+          callback(new Error('请输入邮箱'))
+        } else if(!reg.test(value)) {
+					callback(new Error('请输入正确的邮箱'))
+        }else {
+					callback();
+				}
       }
       return {
 				checked1: true,
-        ruleForm2: {
+        loginForm: {
 					pass: '',
-					resource: '',
 					email: ''
         },
         rules2: {
           pass: [
-            { validator: validatePass, trigger: 'blur' }
+						{ required: true, message: '请输入密码', trigger: 'blur' },
+						{min: 6, max: 18, message: '密码长度应在6-18位', trigger: 'blur'}
 					],
-					resource: [
-            { required: true, message: '请勾选', trigger: 'change' }
+					email: [
+            { validator: validatetell, trigger: 'blur' }
           ]
         }
       }
     },
     methods: {
-      submitForm(formName) {
+      loginsubmit (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             alert('submit!')
@@ -79,6 +80,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+@import './css/register.less';
 </style>

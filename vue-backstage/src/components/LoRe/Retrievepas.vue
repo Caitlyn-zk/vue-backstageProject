@@ -1,30 +1,30 @@
 <template>
-	<div class="login-box">
+	<div class="login-box forget">
 			<div class="login-box-main">
-				<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="102px" class="login-box-bar demo-ruleForm">
+				<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" class="login-box-bar demo-ruleForm">
 					<div class="fond-title">
 						<span>找 回 登 录 密 码</span>
 					</div>
 					<el-form-item
 						class="el-form-email"
 						prop="email"
-						label="请输入邮箱"
-						:rules="[
-							{ required: true, message: '请输入邮箱地址', trigger: 'blur' },
-							{ type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur,change' }
-						]"
+						label=""
 					>
-						<el-input v-model="ruleForm2.email"></el-input>
+						<i class="login-icony el-icon-mobile-phone"></i>
+						<input placeholder="请输入邮箱" class="login-input" v-model="ruleForm2.email"/>
 					</el-form-item>
-					<el-form-item prop="code" label="请输入验证码" class="el-form-email demo-form-inline">
-						<el-input v-model="ruleForm2.code" style="width:120px"></el-input>
+					<el-form-item prop="code" label="" class="el-form-email demo-form-inline">
+						<i class="login-icony el-icon-mobile-phone"></i>
+						<input placeholder="请输入验证码" class="login-input" style="width:199px" v-model="ruleForm2.code"/>
 						<el-button round @click="onSubmit">获取验证码</el-button>
 					</el-form-item>
-					<el-form-item class="el-form-email" label="请输入密码" prop="pass">
-						<el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+					<el-form-item class="el-form-email" label="" prop="pass">
+						<i class="login-icony el-icon-lock"></i>
+						<input class="login-input" placeholder="请输入密码" type="password" v-model="ruleForm2.pass" auto-complete="off"/>
 					</el-form-item>
-					<el-form-item class="el-form-email" label="确认新密码" prop="checkPass">
-						<el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off"></el-input>
+					<el-form-item class="el-form-email" label="" prop="checkPass">
+						<i class="login-icony el-icon-lock"></i>
+						<input class="login-input" placeholder="确认新密码" type="password" v-model="ruleForm2.checkPass" auto-complete="off"/>
 					</el-form-item>
 					<el-form-item class="fond-button">
 						<el-button type="primary" @click="submitForm('ruleForm2')">确认找回</el-button>
@@ -37,15 +37,27 @@
 <script>
 export default {
 	data() {
+		var validatetell = (rule, value, callback) => {
+				let reg = /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/
+				if (!value) {
+          callback(new Error('请输入邮箱'))
+        } else if(!reg.test(value)) {
+					callback(new Error('请输入正确的邮箱'))
+        }else {
+					callback();
+				}
+      }
 			 var validateCode = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请输入验证码'))
-        } else {
-          if (this.ruleForm2.code !== '') {
+        }else if (!value.length === 6) {
+						callback(new Error('请输入正确的验证码'))
+				} else {
+					if (this.ruleForm2.code !== '') {
             this.$refs.ruleForm2.validateField('code')
           }
           callback()
-        }
+				}
 			}
       var validatePass = (rule, value, callback) => {
         if (value === '') {
@@ -75,8 +87,11 @@ export default {
 					code: ''
         },
         rules2: {
+						email: [
+            { validator: validatetell, trigger: 'blur' }
+          ],
 					code: [
-            { validator: validatePass, trigger: 'blur' }
+						{ validator: validateCode, trigger: 'blur' }
 					],
           pass: [
             { validator: validatePass, trigger: 'blur' }
@@ -108,6 +123,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+@import './css/register.less';
 </style>
