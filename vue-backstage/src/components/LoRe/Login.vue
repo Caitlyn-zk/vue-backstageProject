@@ -48,11 +48,11 @@ export default {
 				}
       }
       return {
-				checked1: true,
-				loginLoading: false,
+		checked1: true,
+		loginLoading: false,
         loginForm: {
-					password: '',
-					username: ''
+			password: '',
+			username: ''
         },
         rules2: {
           password: [
@@ -72,49 +72,49 @@ export default {
           if (valid) {
 						this.loginLoading = true
             axios({
-							url: api+'login',
-							method: 'get',
-							params: {
-								mobile: this.loginForm.username,
-								password: this.loginForm.password
-							}
-						}).then((res) => {
-							console.log(res)
-							this.loginLoading = false
-							console.log(this.loginForm.username)
-							if(res.data.status === 200) {
-								
-								res = res.data
-								// 登录成功的数据存入localStorage中
-								window.localStorage.setItem("token",res.data.token)
-								window.localStorage.setItem("userinfo", JSON.stringify(res.data.userinfo))
-								// 存入vuex中
-								this.$store.commit('changeUser', res.data)
-								this.$message({
-									message: '登录成功',
-									type: 'success',
-									showClose: true,
-									duration: 2000,
-									onClose: () => {
-										this.$router.push('/')
-									}
-								})
-							} else {
-								this.$message({
-									message: res.data.message,
-									type: 'error',
-									showClose: true,
-									duration: 3000,
-								})
-							}
-						}).catch ((res) => {
-							this.$message({
-									message: res.data.message,
-									type: 'error',
-									showClose: true,
-									duration: 3000,
-								})
-						})
+				url: api+'login',
+				method: 'get',
+				params: {
+					mobile: this.loginForm.username,
+					password: this.loginForm.password
+				}
+			}).then((res) => {
+				console.log(res)
+				this.loginLoading = false
+				console.log(this.loginForm.username)
+				if(res.data.status === 200) {
+					
+					res = res.data
+					// 登录成功的数据存入localStorage中
+					window.localStorage.setItem("token",res.data.token)
+					window.localStorage.setItem("userinfo", JSON.stringify(res.data.userinfo))
+					// 存入vuex中
+					this.$store.commit('changeUser', res.data)
+					this.$message({
+						message: '登录成功',
+						type: 'success',
+						showClose: true,
+						duration: 2000,
+						onClose: () => {
+							this.$router.push('/')
+						}
+					})
+				} else {
+					this.$message({
+						message: res.data.message,
+						type: 'error',
+						showClose: true,
+						duration: 3000,
+					})
+				}
+			}).catch ((res) => {
+				this.$message({
+					message: res.data.message,
+					type: 'error',
+					showClose: true,
+					duration: 3000,
+				})
+			})
           }
         })
       }

@@ -5,7 +5,7 @@ let login = function (req, res) {
 	// 接收到手机号和密码
 	let mobile = req.body.mobile || req.query.mobile;
 	let password = req.body.password || req.query.password;
-	console.log(req.body);
+	console.log(mobile);
 	console.log(password)
 	var reg = /0?(13|14|15|18|17)[0-9]{9}/
 	if (!mobile) {
@@ -42,7 +42,7 @@ let login = function (req, res) {
 				status: 200,
 				data: {
 					username: data[0],
-					token
+					token: token
 				}
 			})
 		} else {

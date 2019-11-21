@@ -9,9 +9,13 @@ import '../theme/index.css'
 import './font/iconfont.css'
 import './css/index.css'
 import './css/login.css'
-
+import {request, get, post } from 'js/axios'
 Vue.use(ElememtUi)
+
 Vue.config.productionTip = false
+Vue.prototype.$request = request
+Vue.prototype.$get = get
+Vue.prototype.$post = post
 
 // 全局路由
 router.beforeEach((to, from, next) => {
