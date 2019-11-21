@@ -1,0 +1,44 @@
+/* 头部导航的样式 */
+.top-title {
+	background: #034565;
+	height: 75px;
+	color: #fff;
+	line-height: 75px;
+	padding: 0 20px;
+}
+.top-title-brand {
+	float: left;
+	display: inline-block;
+}
+.top-title-brand img {
+	margin-top: 22px;
+	display: inline-block;
+	height: 30px;
+	float: left;
+	margin-right: 10px;
+}
+/* 清除浮动 */
+.clearfloat {
+	content: '';
+	clear: both;
+	display: block;
+}
+.top-title-bar {
+	float: right;
+}
+.top-portrait {
+	float: left;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 1px solid #fff;
+	margin-top: 15px;
+	margin-right: 5px;
+}
+.top-portrait img {
+	max-height: 44px;
+}
+.top-login {
+	color: #fff;
+}

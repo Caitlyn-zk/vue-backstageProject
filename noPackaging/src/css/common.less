@@ -1,0 +1,76 @@
+@import './index.css';
+@import './public.less';
+// 注：在css中不能引入less,但在less中可以引入css
+// 封装公共样式
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clearfix:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+// 5 10 15 20 25 30 35
+// padding 
+.distance(7, 1);
+.distance(@count, @i: 1, @dis: 5 * @i) when(@i <= @count) {
+	.padding-@{dis} {
+		padding:@i * 5px;
+	}
+	.padding-l-@{dis} {
+		padding:@i * 5px;
+	}
+	.padding-r-@{dis} {
+		padding:@i * 5px;
+	}
+	.padding-t-@{dis} {
+		padding:@i * 5px;
+	}
+	.padding-b-@{dis} {
+		padding:@i * 5px;
+	}
+	.padding-lr-@{dis} {
+		padding: 0 @i * 5px;
+	}
+	.padding-tb-@{dis} {
+		padding: @i * 5px 0;
+	}
+	// margin
+	.margin-@{dis} {
+		margin:@i * 5px;
+	}
+	.margin-l-@{dis} {
+		margin:@i * 5px;
+	}
+	.margin-r-@{dis} {
+		margin:@i * 5px;
+	}
+	.margin-t-@{dis} {
+		margin:@i * 5px;
+	}
+	.margin-b-@{dis} {
+		margin:@i * 5px;
+	}
+	.margin-lr-@{dis} {
+		margin: 0 @i * 5px;
+	}
+	.margin-tb-@{dis} {
+		margin: @i * 5px 0;
+	}
+	.distance(@count, @i+1);
+}
+// 12 14 16 18  font9 n6
+.font-sizes(9,6);
+.font-sizes(@font, @n, @size: 2 * @n) when (@n <= @font) {
+	.font-@{size} {
+		font-size: @size * 1px
+	}
+	.font-sizes(@font, @n+1)
+}
+.text-white {
+	color: @text-white;
+}

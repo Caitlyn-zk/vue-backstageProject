@@ -1,0 +1,37 @@
+.el-form-email {
+	margin: 25px 40px;
+	border-bottom: 1px solid #fff;	
+}
+.el-form-email .el-input input {
+	outline: none;
+	background: transparent;
+	border: 0;
+	color: #fff;
+}
+.login-list-pas {
+	font-size: 14px;
+	color: #fff;
+	margin: 20px 0;
+}
+.el-form-item__label {
+	color: #fff;
+}
+/* 记住密码 */
+.login-fond {
+	color: #409Eff;
+	cursor: pointer;
+	margin-left: 91px;
+}
+/* 找回密码 */
+.el-form-email .el-button {
+	background: transparent;
+	padding: 5px 10px;
+}
+.fond-title {
+	font-size: 18px;
+	color: #fff;
+}
+.fond-title span {
+	display: inline-block;
+	border-bottom: 1px solid #fff;
+}
