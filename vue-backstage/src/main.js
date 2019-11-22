@@ -7,8 +7,7 @@ import store from './store'
 import ElememtUi from 'element-ui'
 import '../theme/index.css'
 import './font/iconfont.css'
-import './css/index.css'
-import './css/login.css'
+
 import {request, get, post } from 'js/axios'
 Vue.use(ElememtUi)
 

@@ -34,6 +34,7 @@
 <script>
 import axios from 'axios'
 import {api} from 'js/api.js'
+import {loginRequest} from 'js/axiosRequest'
 export default {
 	data() {
 		var validatetell = (rule, value, callback) => {
@@ -64,57 +65,51 @@ export default {
           ]
         }
       }
-    },
+		},
     methods: {
       loginsubmit (formName) {
         this.$refs[formName].validate((valid) => {
 					// 表单验证
           if (valid) {
 						this.loginLoading = true
-            axios({
-				url: api+'login',
-				method: 'get',
-				params: {
-					mobile: this.loginForm.username,
-					password: this.loginForm.password
-				}
-			}).then((res) => {
-				console.log(res)
-				this.loginLoading = false
-				console.log(this.loginForm.username)
-				if(res.data.status === 200) {
-					
-					res = res.data
-					// 登录成功的数据存入localStorage中
-					window.localStorage.setItem("token",res.data.token)
-					window.localStorage.setItem("userinfo", JSON.stringify(res.data.userinfo))
-					// 存入vuex中
-					this.$store.commit('changeUser', res.data)
-					this.$message({
-						message: '登录成功',
-						type: 'success',
-						showClose: true,
-						duration: 2000,
-						onClose: () => {
-							this.$router.push('/')
-						}
-					})
-				} else {
-					this.$message({
-						message: res.data.message,
-						type: 'error',
-						showClose: true,
-						duration: 3000,
-					})
-				}
-			}).catch ((res) => {
-				this.$message({
-					message: res.data.message,
-					type: 'error',
-					showClose: true,
-					duration: 3000,
-				})
-			})
+						// axios请求
+						loginRequest({
+							data: {
+								mobile: this.loginForm.username,
+								password: this.loginForm.password
+							},
+							error: () => {
+								this.loginLoading = false
+								console.log(error)
+							},
+							success: (res) => {
+								this.loginLoading = false
+								if(res.status === 200) {
+									
+									// 登录成功的数据存入localStorage中
+									window.localStorage.setItem("token",res.data.token)
+									window.localStorage.setItem("userinfo", JSON.stringify(res.data.userinfo))
+									// 存入vuex中
+									this.$store.commit('changeUser', res.data)
+									this.$message({
+										message: '登录成功',
+										type: 'success',
+										showClose: true,
+										duration: 2000,
+										onClose: () => {
+											this.$router.push('/')
+										}
+									})
+								} else {
+									this.$message({
+										message: res.message,
+										type: 'error',
+										showClose: true,
+										duration: 3000,
+									})
+								}
+							}
+						})
           }
         })
       }

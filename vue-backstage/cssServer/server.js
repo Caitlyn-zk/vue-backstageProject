@@ -16,12 +16,12 @@ app.use(parserJson);
 app.use(parserUrlencoded);
 
 // 监听所有请求的跨域 做一个过滤处理
-app.all("*", function (req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Methods", "GET, POST,PUT, DELETE, OPTIONS");
-	res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-	next();
-})
+// app.all("*", function (req, res, next) {
+// 	res.header("Access-Control-Allow-Origin", "*");
+// 	res.header("Access-Control-Allow-Methods", "GET, POST,PUT, DELETE, OPTIONS");
+// 	res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+// 	next();
+// })
 
 // 监听登录接口
 // 接收参数通过bodyparser

@@ -8,10 +8,9 @@
 			<div class="top-portrait">
 				<img src="../../assets/top_portrait.jpg"/>
 			</div>
-				<span>ander</span>
+				<span>18230812587</span>
 			<router-link class="top-login" to="login">登录</router-link>
 		</div>
-		<div class="font-18">akjf;si;difsjg</div>
 	</div>
 </template>
 
@@ -21,7 +20,7 @@
 	}
 </script>
 
-<style lang="less">
-@import '~@/css/common.less';
+<style lang="less" scoped>
+@import './css/main.less';
 	
 </style>
