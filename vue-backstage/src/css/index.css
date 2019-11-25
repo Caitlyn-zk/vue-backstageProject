@@ -1,5 +1,5 @@
 /* 头部导航的样式 */
-.top-title {
+/* .top-title {
 	background: #034565;
 	height: 75px;
 	color: #fff;
@@ -16,9 +16,9 @@
 	height: 30px;
 	float: left;
 	margin-right: 10px;
-}
+} */
 /* 清除浮动 */
-.clearfloat {
+/* .clearfloat {
 	content: '';
 	clear: both;
 	display: block;
@@ -41,4 +41,4 @@
 }
 .top-login {
 	color: #fff;
-}
+} */

@@ -16,10 +16,10 @@
 						<i class="login-icony el-icon-lock"></i>
 						<input class="login-input" placeholder="密码" type="password" v-model="loginForm.password" auto-complete="off"/>
 					</el-form-item>
-				<div class="login-list-pas">
-					<label>
-						<input class="login-checked" align='left' type="checkbox" v-model="checked1"/><span>是否记住账号</span>
-					</label>
+					<div class="login-list-pas margin-10">
+						<label>
+							<input class="login-checked" align='left' type="checkbox" v-model="checked1"/><span class="text-white">是否记住账号</span>
+						</label>
 						<router-link class="login-fond" to="/retrievepas">忘记密码?立即找回</router-link>
 					</div>
 					<el-form-item class="login-submit-btn">

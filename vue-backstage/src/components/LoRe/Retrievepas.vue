@@ -6,23 +6,23 @@
 						<span>找 回 登 录 密 码</span>
 					</div>
 					<el-form-item
-						class="el-form-email"
+						class="login-form-username"
 						prop="email"
 						label=""
 					>
 						<i class="login-icony el-icon-mobile-phone"></i>
 						<input placeholder="请输入邮箱" class="login-input" v-model="ruleForm2.email"/>
 					</el-form-item>
-					<el-form-item prop="code" label="" class="el-form-email demo-form-inline">
+					<el-form-item prop="code" label="" class="login-form-username demo-form-inline">
 						<i class="login-icony el-icon-mobile-phone"></i>
-						<input placeholder="请输入验证码" class="login-input" style="width:199px" v-model="ruleForm2.code"/>
+						<input placeholder="请输入验证码" class="login-input" style="width:170px" v-model="ruleForm2.code"/>
 						<el-button round @click="onSubmit">获取验证码</el-button>
 					</el-form-item>
-					<el-form-item class="el-form-email" label="" prop="pass">
+					<el-form-item class="login-form-username" label="" prop="pass">
 						<i class="login-icony el-icon-lock"></i>
 						<input class="login-input" placeholder="请输入密码" type="password" v-model="ruleForm2.pass" auto-complete="off"/>
 					</el-form-item>
-					<el-form-item class="el-form-email" label="" prop="checkPass">
+					<el-form-item class="login-form-username" label="" prop="checkPass">
 						<i class="login-icony el-icon-lock"></i>
 						<input class="login-input" placeholder="确认新密码" type="password" v-model="ruleForm2.checkPass" auto-complete="off"/>
 					</el-form-item>

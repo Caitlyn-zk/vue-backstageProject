@@ -1,6 +1,160 @@
 // 设置密码
-
+@import '../../../css/common.less';
+@stepColor: #c0c4cc;
 .step-box {
 	width: 60%;
-	margin: 0 auto;
+	margin: 66px auto;
+	.el-steps.el-steps--horizontal {
+		text-align: left;
+		.first-step , .second-step {
+			.el-step__title {
+				margin-left: -25px;
+			}
+		}
+		.third-step {
+			.el-step__title {
+				margin-left: -13px;
+			}
+		}
+		.el-step__head {
+			&.is-process {
+				color: @stepColor;
+			}
+		}
+		.el-step__title {
+			&.is-finish {
+				color: #333;
+			}
+			&.is-process {
+				color: @stepColor;
+			}
+		}
+	}
 }
+// 第一步
+.firstStep-from {
+	width: 43%;
+	margin: 30px auto;
+	.tishi-text {
+		p {
+			margin: 0;
+			line-height: 30px;
+		}
+	}
+}
+.switch-box {
+	.el-switch {
+		position: relative;
+		.el-switch__label {
+			position: absolute;
+			color: #fff;
+		}
+		.el-switch__label--left {
+			display: block;
+			right: 0;
+			z-index: 1;
+			margin-right: 5px;
+		}
+		.el-switch__label--right {
+			display: none;
+			margin-left: 5px;
+		}
+		&.is-checked {
+			.el-switch__label--left {
+				display: none;
+			}
+			.el-switch__label--right {
+				display: block;
+			}
+		}
+	}
+}
+.varCode {
+	.el-input {
+		width: 70%;
+	}
+}
+.el-dialog__body {
+	padding: 0;
+	.modal-dialog {
+		text-align: left;
+		overflow-y: scroll;
+		height: 200px;
+		padding: 0 20px;
+		&::-webkit-scrollbar { /*滚动条整体样式*/
+					width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+					height: 1px;
+			}
+			&::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+					border-radius: 5px;
+					border: 5px solid rgba(3, 60, 214, 0.2);
+					box-shadow: 5px 0 0 #378AE8 inset;
+			}
+			&::-webkit-scrollbar-thumb:hover {
+					box-shadow: 5px 0 0 #4A4A4A inset;
+			}
+	}
+}
+.secondStep {
+	padding: 0 6%;
+	.secondStep-left {
+		width: 25%;
+		float: left;
+	}
+	.secondStep-right {
+		border: 1px solid @stepColor;
+		margin-left: 31%;
+		.cecond-right-title {
+			padding: 10px 20px;
+			color: #fff;
+			height: 80px;
+			background: lightgrey;
+			p {
+				margin: 0;
+				line-height: 30px;
+			}
+		}
+		.el-row {
+			margin-bottom: 20px;
+			padding: 20px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.el-col {
+			border-radius: 4px;
+		}
+		.bg-purple-dark {
+			background: #99a9bf;
+		}
+		.bg-purple {
+			background: #d3dce6;
+		}
+		.bg-purple-light {
+			background: #e5e9f2;
+		}
+		.grid-content {
+			border: 1px solid #378AE8;
+			border-radius: 4px;
+			min-height: 126px;
+			position: relative;
+			.top-right-triangle {
+				width: 0;
+				height: 0;
+				border-left: 0px solid #ece82b;
+				border-right: 50px solid #03A9F4;
+				border-top: 50px solid #25e028;
+				border-bottom: 50px solid #f40355;
+				border-style: solid;
+				border-color: transparent #f6746a transparent  transparent ;
+				position: absolute;
+				left: 0;
+			}
+		}
+		.row-bg {
+			padding: 10px 0;
+			background-color: #f9fafc;
+		}
+	}
+}
+
