@@ -1,6 +1,19 @@
 @import './public.less';
 // 注：在css中不能引入less,但在less中可以引入css
 // 封装公共样式
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: @mainColor;
+}
+li {
+	list-style: none;
+}
+
 .fl {
 	float: left;
 }

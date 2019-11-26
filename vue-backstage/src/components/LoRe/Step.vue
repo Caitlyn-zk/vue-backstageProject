@@ -19,8 +19,8 @@ import thirdStep from 'components/LoRe/thirdStep'
 export default {
 	data () {
 		return {
-			stepActive: 1,
-			view: 'firstStep'
+			stepActive: 2,
+			view: 'secondStep'
 		}
 	},
 	components: {
