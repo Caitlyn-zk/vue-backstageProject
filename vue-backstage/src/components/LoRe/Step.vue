@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<Top></Top>
 		<div class="step-box">
 			<el-steps :active="stepActive" >
 					<el-step  class="first-step" title="设置交易密码" icon="el-icon-success"></el-step>
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import Top from 'components/Common/Top'
 import firstStep from 'components/LoRe/firstStep'
 import secondStep from 'components/LoRe/secondStep'
 import thirdStep from 'components/LoRe/thirdStep'
@@ -26,7 +28,8 @@ export default {
 	components: {
 		firstStep,
 		secondStep,
-		thirdStep
+		thirdStep,
+		Top
 	},
 	methods: {
 		changeStep (step) {

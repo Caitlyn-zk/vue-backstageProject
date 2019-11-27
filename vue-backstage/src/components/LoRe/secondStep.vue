@@ -1,5 +1,6 @@
 <template>
 		<div class="secondStep clearfix">
+			<div class="changeTab-title ">选择应用功能模块</div>
 			<el-tabs @tab-click="changeTab" tab-position="left" style="height: 500px;">
 				<el-tab-pane label="通用功能模块">
 					<Secondcona></Secondcona>
@@ -7,10 +8,8 @@
 				<el-tab-pane label="自定义功能模块">
 					<Secondtow></Secondtow>
 				</el-tab-pane>
-				<el-tab-pane label="角色管理">角色管理</el-tab-pane>
-				<el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
 			</el-tabs>
-			<el-button type="primary" @click="changeSt">下一步</el-button>
+			<el-button type="primary" @click="changeSt">应用模板</el-button>
 		</div>
 </template>
 
@@ -23,10 +22,10 @@ export default {
 	},
 	methods: {
 		changeSt () {
-			var index = this.$store.state.tabIndex
+			var index = this.$store.state.step.tabIndex
 			let moduleData = []
 			let modulelist = this.$store.state.step.modulelist
-			if(index === 1) {
+			if(index === 0) {
 				moduleData = modulelist
 			}else {
 				moduleData = modulelist.filter((item) => {

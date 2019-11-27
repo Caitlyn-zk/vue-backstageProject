@@ -24,5 +24,4 @@
 
 <style lang="less" scoped>
 @import './css/main.less';
-	
 </style>

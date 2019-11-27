@@ -4,22 +4,23 @@ let state = {
 		name: '账户管理',
 		desciptor: '这是账户管理描述',
 		showName: '账户管理',
-		id: 1,
-		isChecked: false
+		path: '/account',
+		id: 1
+		
 	}, {
 			name: '产品管理',
 			desciptor: '这是产品管理描述',
 			showName: '产品管理',
-			id: 2,
-			isChecked: false
+			path: '/product',
+			id: 2
 		}, {
 			name: '二维码管理',
 			desciptor: '这是二维码管理管理描述',
 			showName: '二维码管理',
-			id: 3,
-			isChecked: false
+			path: '/qrcode',
+			id: 3
 		}],
-	chooseModule: {}
+	chooseModule: []
 }
 let mutations = {
 	changTabIndex(state, index) {
